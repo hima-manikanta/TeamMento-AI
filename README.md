@@ -1,4 +1,9 @@
-# TeamMento AI — README
+
+### 🔥 README tagline I recommend putting at the very top
+
+> **“What if every problem solved by your team could teach the AI how to help the next person?”**
+
+That sentence immediately communicates the **memory → learning → future assistance** concept that should be the centerpiece of your hackathon submission.
 
 ````markdown
 # TeamMento AI 🧠
