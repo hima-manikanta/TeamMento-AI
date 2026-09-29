@@ -1,11 +1,5 @@
 ```````
 
-### 🔥 README tagline
-
-> **“What if every problem solved by your team could teach the AI how to help the next person?”**
-
-That sentence immediately communicates the **memory → learning → future assistance** concept that should be the centerpiece of your hackathon submission.
-```
 # TeamMento AI 🧠
 
 > **An AI-powered team mentor that learns from every employee experience and helps the next employee work smarter.**
