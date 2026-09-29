@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 type ChatMessage = { sender: string; message: string };
 type EmployeeState = {
@@ -99,15 +99,14 @@ export default function Home() {
     [data, selectedEmployee]
   );
 
-  const refresh = useCallback(async () => {
-    const res = await fetch(`${API_BASE}/api/demo/state`);
-    const json = (await res.json()) as DemoResponse;
-    setData(json);
-  }, []);
-
   useEffect(() => {
-    refresh();
-  }, [refresh]);
+    const load = async () => {
+      const res = await fetch(`${API_BASE}/api/demo/state`);
+      const json = (await res.json()) as DemoResponse;
+      setData(json);
+    };
+    void load();
+  }, []);
 
   const runDemo = async () => {
     setLoading(true);

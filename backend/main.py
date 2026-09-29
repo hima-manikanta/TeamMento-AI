@@ -12,7 +12,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from dotenv import load_dotenv
 
-from services.hindsight_service import HindsightService
+from backend.services.hindsight_service import HindsightService
 
 BASE_DIR = Path(__file__).resolve().parent
 load_dotenv(BASE_DIR.parent / ".env")
@@ -520,11 +520,11 @@ async def mentor_resolve(payload: MentorResolvePayload) -> dict[str, Any]:
     hindsight_result: dict[str, Any]
     try:
         hindsight_result = await hindsight.retain_experience(experience)
-    except Exception as exc:  # noqa: BLE001
+    except Exception:  # noqa: BLE001
         hindsight_result = {
             "stored": False,
             "provider": "error",
-            "error": str(exc),
+            "error": "Hindsight retain request failed",
             "id": None,
         }
 
